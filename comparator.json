@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "LongGapsBetweenPrimes",
+  "theorem_names": [
+    "LongGapsBetweenPrimes.long_prime_gaps"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

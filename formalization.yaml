@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+
+# formalization.yaml (v0.4): repo-root metadata for formalization projects.
+version: "v0.4"
+
+project:
+  name: "LongGapsBetweenPrimes"
+  description: >-
+    A Lean 4 formalization of the long-gap lower bound for consecutive primes
+    from Improved Long Gaps Between Primes. For all sufficiently large X, the
+    largest prime gap below X is bounded below by a positive constant times
+    log X (log log X)^2 log log log log X / (log log log X)^2.
+  authors:
+    - "OpenAI"
+  license: "Apache-2.0"
+
+sources:
+  - title: "Improved Long Gaps Between Primes"
+    authors:
+      - "OpenAI"
+    type: "article"
+    location: "Theorem 1.1 and Proposition 1.2"
+    relationship: "formalizes"
+    author_endorsement: "participated"
+
+classification:
+  arxiv:
+    - "math.NT"
+  msc2020:
+    - "11N05"
+
+status:
+  scope: "Full formalization of main results."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+    - "propext"
+    - "Classical.choice"
+    - "Quot.sound"
+  main_results:
+    - declaration: "LongGapsBetweenPrimes.long_prime_gaps"
+      file: "LongGapsBetweenPrimes.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Classical.choice"
+        - "Quot.sound"
+      comparator_config: "comparator.json"
+    - declaration: "LongGapsBetweenPrimes.long_gap_theorem"
+      file: "LongGapsBetweenPrimes.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Classical.choice"
+        - "Quot.sound"
+    - declaration: "LongGapsBetweenPrimes.short_translates"
+      file: "LongGapsBetweenPrimes.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Classical.choice"
+        - "Quot.sound"
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "GPT 6 Astra"
+      framework: "Codex"
+      cost:
+        wall_time: "2 hours"
+      prompting_notes: "Used /goal mode. No set_option allowed."
+  notes: >-
+    Following the initial autonomous pass, the formalization was refined
+    through human-in-the-loop quality improvements.
+
+review:
+  status: "self-assessed"
+
+alignment:
+  namespace: "LongGapsBetweenPrimes"
+  statements:
+    - source: "Proposition 1.2"
+      lean: "LongGapsBetweenPrimes.short_translates"
+      module: "LongGapsBetweenPrimes"
+      status: "proved"
+    - source: "Theorem 1.1"
+      lean: "LongGapsBetweenPrimes.long_gap_theorem"
+      module: "LongGapsBetweenPrimes"
+      status: "proved"
+    - source: "Theorem 1.1 (indexed-prime Comparator form)"
+      lean: "LongGapsBetweenPrimes.long_prime_gaps"
+      module: "LongGapsBetweenPrimes"
+      status: "proved"
+
+acknowledgements: >-
+  Thank you very much to the authors of Lean 4 and mathlib, as well as Lake,
+  Comparator, lean4export, nanoda, and related tools.
