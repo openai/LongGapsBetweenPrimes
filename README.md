@@ -1,7 +1,10 @@
 # Improved Long Gaps Between Primes
 
 This repository contains a Lean 4 formalization of the results presented in
-*Improved Long Gaps Between Primes* by OpenAI.
+[Improved Long Gaps Between Primes](https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps.pdf) by OpenAI.
+
+- [Read the paper](https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps.pdf)
+- [Read the abridged chain of thought](https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps_abridged_cot.pdf)
 
 ## Main result
 

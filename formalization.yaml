@@ -18,6 +18,7 @@ sources:
   - title: "Improved Long Gaps Between Primes"
     authors:
       - "OpenAI"
+    id: "https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps.pdf"
     type: "article"
     location: "Theorem 1.1 and Proposition 1.2"
     relationship: "formalizes"
